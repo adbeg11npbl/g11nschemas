@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "required": [],
+  "properties": {
+    "stories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "paragraphs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [],
+              "properties": {
+                "paragraph_id": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "story_id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
