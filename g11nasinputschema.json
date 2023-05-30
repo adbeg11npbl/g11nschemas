@@ -1,33 +1,59 @@
 {
-  "type": "object",
-  "required": [],
-  "properties": {
-    "stories": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": [],
-        "properties": {
-          "paragraphs": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [],
-              "properties": {
-                "paragraph_id": {
-                  "type": "string"
-                },
-                "value": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "story_id": {
-            "type": "string"
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome4",
+  "definitions": {
+    "Welcome4": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Story"
           }
         }
-      }
+      },
+      "required": [
+        "stories"
+      ],
+      "title": "Welcome4"
+    },
+    "Story": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Paragraph"
+          }
+        },
+        "story_id": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "paragraphs",
+        "story_id"
+      ],
+      "title": "Story"
+    },
+    "Paragraph": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "paragraph_id": {
+          "type": "integer"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "paragraph_id",
+        "value"
+      ],
+      "title": "Paragraph"
     }
   }
 }
